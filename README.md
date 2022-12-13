@@ -1,2 +1,2 @@
 # esp32_long_distance
-EspNow + LR
+EspNow + 802.11LR
