@@ -39,7 +39,7 @@ uint8_t rx_mac_addr[] = {0x40, 0x22, 0xD8, 0x04, 0xCC, 0xC0};
 
 
 // Create a struct_message called myData
-struct_message myData;
+struct_message_target myData;
 
 unsigned long lastTime = 0;  
 unsigned long timerDelay = 500;  // send readings timer
@@ -78,9 +78,13 @@ void setup() {
   // Init Serial Monitor
   Serial.begin(115200);
  
-  pinMode(PIN_YUNXING, INPUT_PULLUP);
-  pinMode(PIN_TINGZHI, INPUT_PULLUP);
-  pinMode(PIN_GUZHANG, INPUT_PULLUP);
+  pinMode(PIN_YUNXING_2, INPUT_PULLUP);
+  pinMode(PIN_TINGZHI_2, INPUT_PULLUP);
+  pinMode(PIN_GUZHANG_2, INPUT_PULLUP);
+
+  pinMode(PIN_YUNXING_4, INPUT_PULLUP);
+  pinMode(PIN_TINGZHI_4, INPUT_PULLUP);
+  pinMode(PIN_GUZHANG_4, INPUT_PULLUP);
   pinMode(PIN_LED, OUTPUT);
   
   // Set device as a Wi-Fi Station
@@ -117,18 +121,26 @@ void setup() {
  
 void loop() {
   if ((millis() - lastTime) > timerDelay) {
-    myData.station_id =  MY_ID;
-    myData.io_1 = digitalRead(PIN_YUNXING);
-    myData.io_2 = digitalRead(PIN_TINGZHI);
-    myData.io_3 = digitalRead(PIN_GUZHANG);
+    // myData.station_id =  MY_ID;
+    myData.io_21 = digitalRead(PIN_YUNXING_2);
+    myData.io_22 = digitalRead(PIN_TINGZHI_2);
+    myData.io_23 = digitalRead(PIN_GUZHANG_2);
+
+    myData.io_41 = digitalRead(PIN_YUNXING_4);
+    myData.io_42 = digitalRead(PIN_TINGZHI_4);
+    myData.io_43 = digitalRead(PIN_GUZHANG_4);
 
     // Send message via ESP-NOW
     esp_now_send(rx_mac_addr, (uint8_t *) &myData, sizeof(myData));
     Serial.print(millis());
     Serial.print("\t\t");
-    Serial.print(myData.io_1);
-    Serial.print(myData.io_2);
-    Serial.println(myData.io_3);
+    Serial.print(myData.io_21);
+    Serial.print(myData.io_22);
+    Serial.print(myData.io_23);
+
+    Serial.print(myData.io_41);
+    Serial.print(myData.io_42);
+    Serial.print(myData.io_43);
 
     lastTime = millis();
   }
