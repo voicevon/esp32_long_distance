@@ -29,7 +29,7 @@
 
 // Create a struct_message called myData
 // struct_message myData;
-struct_message rx_buffer;
+struct_message_source rx_buffer;
 bool led_is_on = true;
 
 // Callback function that will be executed when data is received

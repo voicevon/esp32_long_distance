@@ -27,15 +27,15 @@
 #define PIN_LED 2
 
 
-#define MY_ID 3
+#define MY_ID 2
 
-// REPLACE WITH RECEIVER MAC Address  40:22:D8:F0:24:20  40:22:D8:04:CC:C0
-uint8_t rx_mac_addr[] = {0x40, 0x22, 0xD8, 0x04, 0xCC, 0xC0};
+// REPLACE WITH RECEIVER MAC Address  40:22:D8:F0:24:20  40:22:D8:04:CC:C0 40:22:D8:F0:24:20
+uint8_t rx_mac_addr[] = {0x40, 0x22, 0xD8, 0xF0, 0x24, 0x20};
 
 
 
 // Create a struct_message called myData
-struct_message myData;
+struct_message_source myData;
 
 unsigned long lastTime = 0;  
 unsigned long timerDelay = 500;  // send readings timer
@@ -113,18 +113,19 @@ void setup() {
  
 void loop() {
   if ((millis() - lastTime) > timerDelay) {
-    myData.station_id =  MY_ID;
-    myData.io_1 = digitalRead(PIN_YUNXING);
-    myData.io_2 = digitalRead(PIN_TINGZHI);
-    myData.io_3 = digitalRead(PIN_GUZHANG);
-
+    // myData.station_id =  MY_ID;
+      myData.station_id = MY_ID;
+      myData.io_1 = digitalRead(PIN_YUNXING);
+      myData.io_2 = digitalRead(PIN_TINGZHI);
+      myData.io_3 = digitalRead(PIN_GUZHANG);
     // Send message via ESP-NOW
     esp_now_send(rx_mac_addr, (uint8_t *) &myData, sizeof(myData));
     Serial.print(millis());
     Serial.print("\t\t");
     Serial.print(myData.io_1);
     Serial.print(myData.io_2);
-    Serial.println(myData.io_3);
+    Serial.print(myData.io_3);
+    Serial.println("");
 
     lastTime = millis();
   }

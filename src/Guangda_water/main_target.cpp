@@ -29,7 +29,7 @@
 
 // Create a struct_message called myData
 // struct_message myData;
-struct_message rx_buffer;
+struct_message_target rx_buffer;
 bool led_is_on = true;
 
 // Callback function that will be executed when data is received
@@ -38,32 +38,32 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   Serial.print("Bytes received: ");
   Serial.print(len);
   Serial.print("\t");
-  Serial.print(rx_buffer.station_id);
-  Serial.print("\t");
-  Serial.print(rx_buffer.io_1);
+  // Serial.print(rx_buffer.station_id);
+  // Serial.print("\t");
+  Serial.print(rx_buffer.io_21);
   Serial.print(" ");
-  Serial.print(rx_buffer.io_2);
+  Serial.print(rx_buffer.io_22);
   Serial.print(" ");
-  Serial.println(rx_buffer.io_3);
+  Serial.println(rx_buffer.io_23);
 
   led_is_on = ! led_is_on;
   digitalWrite(PIN_LED, led_is_on);
 
-  switch (rx_buffer.station_id)
+  // switch (rx_buffer.station_id)
   {
-    case 4:
-        digitalWrite(PIN_YUNXING_4, rx_buffer.io_1);
-        digitalWrite(PIN_TINGZHI_4, rx_buffer.io_2);
-        digitalWrite(PIN_GUZHANG_4, rx_buffer.io_3);
-        break;
-    case 3:
-        digitalWrite(PIN_YUNXING_3, rx_buffer.io_1);
-        digitalWrite(PIN_TINGZHI_3, rx_buffer.io_2);
-        digitalWrite(PIN_GUZHANG_3, rx_buffer.io_3);
-        break;
+    // case 4:
+        digitalWrite(PIN_YUNXING_4, rx_buffer.io_21);
+        digitalWrite(PIN_TINGZHI_4, rx_buffer.io_22);
+        digitalWrite(PIN_GUZHANG_4, rx_buffer.io_23);
+    //     break;
+    // case 3:
+        digitalWrite(PIN_YUNXING_3, rx_buffer.io_41);
+        digitalWrite(PIN_TINGZHI_3, rx_buffer.io_42);
+        digitalWrite(PIN_GUZHANG_3, rx_buffer.io_43);
+    //     break;
     
-    default:
-        break;
+    // default:
+    //     break;
   }
 }
  
