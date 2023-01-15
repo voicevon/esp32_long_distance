@@ -9,7 +9,7 @@
   copies or substantial portions of the Software.
 */
 #include "all_applications.h"
-#ifdef I_AM_LONG_DISTANCE_MASTER
+#ifdef I_AM_LONG_DISTANCE_SOURCE
 #include <esp_now.h>
 #include <WiFi.h>
 #include "message.h"

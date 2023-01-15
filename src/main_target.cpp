@@ -9,7 +9,7 @@
   copies or substantial portions of the Software.
 */
 #include "all_applications.h"
-#ifdef I_AM_LONG_DISTANCE_SLAVE
+#ifdef I_AM_LONG_DISTANCE_TARGET
 
 #include <WiFi.h>
 #include <esp_now.h>

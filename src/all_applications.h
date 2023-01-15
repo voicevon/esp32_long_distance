@@ -1,3 +1,5 @@
-// #define I_AM_LONG_DISTANCE_SLAVE    //receiver
-#define I_AM_LONG_DISTANCE_MASTER   //sender
+#define I_AM_LONG_DISTANCE_SOURCE      //sender
+// #define I_AM_LONG_DISTANCE_ROUTER_RX
+// #define I_AM_LONG_DISTANCE_ROUTER_TX
+// #define I_AM_LONG_DISTANCE_TARGET    //receiver
 // #define I_AM_LONG_DISTANCE_MAC_CHECKER
