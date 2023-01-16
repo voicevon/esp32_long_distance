@@ -31,10 +31,10 @@
 #define PIN_LED 2
 
 
-#define MY_ID 3
+// #define MY_ID 3
 
-// REPLACE WITH RECEIVER MAC Address  40:22:D8:F0:24:20  40:22:D8:04:CC:C0
-uint8_t rx_mac_addr[] = {0x40, 0x22, 0xD8, 0x04, 0xCC, 0xC0};
+// REPLACE WITH RECEIVER MAC Address  40:22:D8:F0:24:20  40:22:D8:04:CC:C0   CC:50:E3:9B:F9:84
+uint8_t rx_mac_addr[] = {0xCC, 0x50, 0xE3, 0x9B, 0xF9, 0x84};
 
 
 

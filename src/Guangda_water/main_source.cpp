@@ -21,16 +21,16 @@
 // #include "esp_private/esp_wifi_private.h"
 // #include "esp_wifi_default.h"
 
-#define PIN_YUNXING 14  //D5
-#define PIN_TINGZHI 12  //D6
-#define PIN_GUZHANG 13  //D7
+#define PIN_YUNXING 27  //D5
+#define PIN_TINGZHI 26  //D6
+#define PIN_GUZHANG 25  //D7
 #define PIN_LED 2
 
 
 #define MY_ID 2
 
-// REPLACE WITH RECEIVER MAC Address  40:22:D8:F0:24:20  40:22:D8:04:CC:C0 40:22:D8:F0:24:20
-uint8_t rx_mac_addr[] = {0x40, 0x22, 0xD8, 0xF0, 0x24, 0x20};
+// REPLACE WITH RECEIVER MAC Address  40:22:D8:F0:24:20  40:22:D8:04:CC:C0 40:22:D8:F0:24:20  40:22:D8:76:62:10
+uint8_t rx_mac_addr[] = {0x40, 0x22, 0xD8, 0x76, 0x62, 0x10};
 
 
 
