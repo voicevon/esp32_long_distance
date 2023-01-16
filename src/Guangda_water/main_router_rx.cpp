@@ -56,7 +56,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
         digitalWrite(PIN_TINGZHI_4, rx_buffer.io_2);
         digitalWrite(PIN_GUZHANG_4, rx_buffer.io_3);
         break;
-    case 3:
+    case 2:
         digitalWrite(PIN_YUNXING_2, rx_buffer.io_1);
         digitalWrite(PIN_TINGZHI_2, rx_buffer.io_2);
         digitalWrite(PIN_GUZHANG_2, rx_buffer.io_3);

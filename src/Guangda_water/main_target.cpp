@@ -17,12 +17,12 @@
 #include "esp_wifi.h"
 
 
-#define PIN_YUNXING_4 4
-#define PIN_TINGZHI_4 5
-#define PIN_GUZHANG_4 16
-#define PIN_YUNXING_3 14
-#define PIN_TINGZHI_3 12
-#define PIN_GUZHANG_3 13
+#define PIN_YUNXING_4 13
+#define PIN_TINGZHI_4 32
+#define PIN_GUZHANG_4 4
+#define PIN_YUNXING_2 25
+#define PIN_TINGZHI_2 27
+#define PIN_GUZHANG_2 14
 
 #define PIN_LED 2
 
@@ -56,10 +56,10 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
         digitalWrite(PIN_TINGZHI_4, rx_buffer.io_22);
         digitalWrite(PIN_GUZHANG_4, rx_buffer.io_23);
     //     break;
-    // case 3:
-        digitalWrite(PIN_YUNXING_3, rx_buffer.io_41);
-        digitalWrite(PIN_TINGZHI_3, rx_buffer.io_42);
-        digitalWrite(PIN_GUZHANG_3, rx_buffer.io_43);
+    // case 2:
+        digitalWrite(PIN_YUNXING_2, rx_buffer.io_41);
+        digitalWrite(PIN_TINGZHI_2, rx_buffer.io_42);
+        digitalWrite(PIN_GUZHANG_2, rx_buffer.io_43);
     //     break;
     
     // default:
@@ -73,9 +73,9 @@ void setup() {
   // Initialize Serial Monitor
   Serial.begin(115200);
   Serial.println("I_AM_LONG_DISTANCE_SLAVE");
-  pinMode(PIN_YUNXING_3, OUTPUT);
-  pinMode(PIN_TINGZHI_3, OUTPUT);
-  pinMode(PIN_GUZHANG_3, OUTPUT);
+  pinMode(PIN_YUNXING_2, OUTPUT);
+  pinMode(PIN_TINGZHI_2, OUTPUT);
+  pinMode(PIN_GUZHANG_2, OUTPUT);
   pinMode(PIN_YUNXING_4, OUTPUT);
   pinMode(PIN_TINGZHI_4, OUTPUT);
   pinMode(PIN_GUZHANG_4, OUTPUT);
