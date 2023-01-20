@@ -52,17 +52,17 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   // switch (rx_buffer.station_id)
   {
     // case 4:
-        digitalWrite(PIN_YUNXING_4, rx_buffer.io_21);
-        digitalWrite(PIN_TINGZHI_4, rx_buffer.io_22);
-        digitalWrite(PIN_GUZHANG_4, rx_buffer.io_23);
+        digitalWrite(PIN_YUNXING_4, !rx_buffer.io_21);
+        digitalWrite(PIN_TINGZHI_4, !rx_buffer.io_22);
+        digitalWrite(PIN_GUZHANG_4, !rx_buffer.io_23);
     //     break;
     // case 2:
-        digitalWrite(PIN_YUNXING_2, rx_buffer.io_41);
-        digitalWrite(PIN_TINGZHI_2, rx_buffer.io_42);
-        digitalWrite(PIN_GUZHANG_2, rx_buffer.io_43);
+        digitalWrite(PIN_YUNXING_2, !rx_buffer.io_41);
+        digitalWrite(PIN_TINGZHI_2, !rx_buffer.io_42);
+        digitalWrite(PIN_GUZHANG_2, !rx_buffer.io_43);
     //     break;
     
-    // default:
+    // default:lu
     //     break;
   }
 }
